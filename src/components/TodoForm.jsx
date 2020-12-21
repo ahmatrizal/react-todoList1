@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-const TodoForm = () => {
+const TodoForm = ({ addTodo }) => {
   const [value, setValue] = useState("");
   const handleFromSubmit = (e) => {
     e.preventDefault();
