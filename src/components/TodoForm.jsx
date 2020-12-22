@@ -7,7 +7,13 @@ const TodoForm = ({ addTodo, showAdd }) => {
     e.preventDefault();
 
     if (!value) {
-      alert("Todo tidak boleh kosong");
+      alert("Todo tidak boleh kosong!");
+      return;
+    }
+
+    if (value.length > 40) {
+      alert("Todo terlalu panjang!");
+      setValue("");
       return;
     }
     addTodo(value);
