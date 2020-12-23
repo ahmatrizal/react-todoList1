@@ -59,7 +59,7 @@ body.html {
 }
 
 .header-title {
-  flex: 1;
+  width: 52%;
   text-align: center;
   font-size: 3.6rem;
   font-family: "Homemade Apple", san-serif;
@@ -68,6 +68,7 @@ body.html {
 }
 
 .header-btn {
+  width: 24%;
   font-size: 1.8rem;
   font-family: "Bungee", san-serif;
 
@@ -84,6 +85,14 @@ body.html {
 
 .header-btn.main-black-color:active {
   text-shadow: 1px 1px 2px var(--main-black-color);
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
 }
 .add {
   padding: 16px;
