@@ -1,17 +1,20 @@
 import { css } from "@emotion/react";
 
-export const button = ({ color, align }) => {
+export const button = ({ color, align, theme }) => {
   let textColor;
+  const {
+    color: { primary }
+  } = theme;
 
-  switch (textColor) {
+  switch (color) {
     case "black":
-      textColor = "#484848";
+      textColor = primary.black;
       break;
     case "red":
-      textColor = "#e06262";
+      textColor = primary.red;
       break;
     default:
-      textColor = "#484848";
+      textColor = primary.black;
   }
 
   return css`
@@ -19,7 +22,7 @@ export const button = ({ color, align }) => {
     font-size: 1.8rem;
     font-family: "Bungee", san-serif;
     color: ${textColor};
-    align-items: ${align};
+    text-align: ${align};
 
     padding: 16px;
     cursor: pointer;
