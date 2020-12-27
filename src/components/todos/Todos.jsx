@@ -1,12 +1,18 @@
+/**@jsx jsx */
+
+import { jsx } from "@emotion/react";
 import React from "react";
 import PropTypes from "prop-types";
 import Todo from "../todo/Todo";
-import cx from "classnames";
-import styles from "./Todos.module.css";
+// import cx from "classnames";
+// import styles from "./Todos.module.css";
+import { useTheme } from "@emotion/react";
+import * as styles from "./Todos.styles";
 
 const Todos = ({ todos, completeTodo }) => {
+  const theme = useTheme();
   return (
-    <section className={styles.todos}>
+    <section css={styles.todos()}>
       {todos.length > 0 &&
         todos.map((todo, index) => {
           return (
@@ -20,12 +26,10 @@ const Todos = ({ todos, completeTodo }) => {
           );
         })}
       {todos.length === 0 && (
-        <div className={styles.todoPlaceholderText}>
+        <div css={styles.todoPlaceholderText()}>
           {" "}
-          Click tombol <span className={styles.btnPlaceholderText}>
-            Add
-          </span>{" "}
-          untuk menambahkan Todo baru
+          Click tombol <span css={styles.btnPlaceholderText()}>Add</span> untuk
+          menambahkan Todo baru
         </div>
       )}
     </section>
