@@ -9,7 +9,6 @@ export const header = () => {
 
 export const headerTitle = (theme) => {
   return css`
-    width: 52%;
     text-align: center;
     font-size: 3.6rem;
     font-family: "Homemade Apple", san-serif;

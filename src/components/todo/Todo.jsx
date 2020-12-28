@@ -7,17 +7,23 @@ import PropTypes from "prop-types";
 // import styles from "./Todo.module.css";
 import * as styles from "./Todo.styles";
 import { useTheme } from "@emotion/react";
+import Container from "../../layout/Container";
+import Item from "../../layout/Item";
 
 const Todo = ({ text, completeTodo, index, isCompleted }) => {
   const theme = useTheme();
   return (
     <div css={styles.todo(theme)} onClick={() => completeTodo(index)}>
-      <span
-        css={styles.todoText()}
-        style={{ textDecoration: isCompleted ? "line-through" : "initial" }}
-      >
-        {text}
-      </span>
+      <Container>
+        <Item align="center">
+          <span
+            css={styles.todoText()}
+            style={{ textDecoration: isCompleted ? "line-through" : "initial" }}
+          >
+            {text}
+          </span>
+        </Item>
+      </Container>
     </div>
   );
 };
