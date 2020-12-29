@@ -9,7 +9,9 @@ const Container = ({
   flexWrap,
   justifyContent,
   alignItems,
-  alignContent
+  alignContent,
+  height,
+  minHeight
 }) => {
   const containerStyles = css`
     display: flex;
@@ -18,6 +20,8 @@ const Container = ({
     justify-content: ${justifyContent};
     align-items: ${alignItems};
     align-content: ${alignContent};
+    height: ${height};
+    min-height: ${minHeight};
   `;
   return (
     <div className="flexContainer" css={containerStyles}>
@@ -31,7 +35,9 @@ Container.defaultProps = {
   flexWrap: "nowrap",
   justifyContent: "flex-start",
   alignItems: "stretch",
-  alignContent: "stretch"
+  alignContent: "stretch",
+  height: "auto",
+  minHeight: "initial"
 };
 Container.propTypes = {
   children: PropTypes.oneOfType([
@@ -83,7 +89,9 @@ Container.propTypes = {
     "baseline",
     "first baseline",
     "last baseline"
-  ])
+  ]),
+  height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  minHeight: PropTypes.string
 };
 
 export default Container;
