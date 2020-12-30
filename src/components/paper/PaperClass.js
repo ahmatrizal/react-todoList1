@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from "react";
 
 import PropTypes from "prop-types";
 import { withTheme } from "@emotion/react";
@@ -13,27 +12,26 @@ const StyledPaper = Styled.div`
     background-color: #f2eecb;
     border-radius: 4px;
     padding: 32px;
-`
+`;
 
 const StyledFrame = Styled.div`
-  border: 1px solid ${props => props.theme.color.primary.black};
+  border: 1px solid ${(props) => props.theme.color.primary.black};
     height: 100%;
-`
+`;
 
 class Paper extends React.Component {
-  const { children, theme } = this.props;
-  render(){
+  render() {
+    const { children, theme } = this.props;
 
-
-    return(
+    return (
       // <Container>
       // <Item flex-direction="column" justify-content="space-between">
-        <StyledPaper >
-          <StyledFrame css={styles.Frame(theme)}>{children};</StyledFrame>
-        </StyledPaper>
-    //   </Item>
-    // </Container>
-    )
+      <StyledPaper>
+        <StyledFrame css={Styled.div(theme)}>{children};</StyledFrame>
+      </StyledPaper>
+      //   </Item>
+      // </Container>
+    );
   }
   static propTypes = {
     children: PropTypes.oneOfType([
