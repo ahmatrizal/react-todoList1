@@ -1,23 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-import Paper from "../components/paper/PaperClass";
-import Header from "../components/header/HeaderClass";
-import TodoForm from "../components/todoForm/todoFormClass";
-import Todos from "../components/todos/TodosClass";
+import useStateWithLocalStorage from "../components/hooks/useStateWithLocalStorage";
+
+import Paper from "../components/paper/Paper";
+import Header from "../components/header/Header";
+import TodoForm from "../components/todoForm/TodoForm";
+import Todos from "../components/todos/Todos";
 
 const TodoList = () => {
-  const [todos, setTodos] = useState([
-    {
-      text: "Belajar React",
-      isCompleted: false
-    },
-    {
-      text: "Belajar Hooks",
-      isCompleted: false
-    }
-  ]);
+  const [todos, setTodos] = useStateWithLocalStorage("todos");
 
   const [showAdd, setShowAdd] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   const addTodo = (value) => {
     if (todos.length < 10) {
@@ -30,7 +27,7 @@ const TodoList = () => {
   };
 
   const clearTodos = () => {
-    setTodos([]);
+    localStorage.removeItem("todos");
   };
 
   const completeTodo = (index) => {
@@ -41,8 +38,6 @@ const TodoList = () => {
   };
 
   const showAddToggle = () => setShowAdd(!showAdd);
-
-  console.log("todos", todos);
 
   return (
     <Paper>
