@@ -1,13 +1,15 @@
 /**@jsx jsx */
 
 import { jsx } from "@emotion/react";
-// import React from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import Todo from "../todo/TodoClass";
 // import cx from "classnames";
 // import styles from "./Todos.module.css";
 import * as styles from "./Todos.styles";
 import Container from "../../layout/Container";
+import Item from "../../layout/Item";
+import { Link } from "react-router-dom";
 
 const Todos = ({ todos, completeTodo }) => {
   return (
@@ -27,11 +29,23 @@ const Todos = ({ todos, completeTodo }) => {
           })}
 
         {todos.length === 0 && (
-          <div css={styles.todoPlaceholderText()}>
-            {" "}
-            Click tombol <span css={styles.btnPlaceholderText()}>Add</span>{" "}
-            untuk menambahkan Todo baru
-          </div>
+          <React.Fragment>
+            <div css={styles.todoPlaceholderText()}>
+              {" "}
+              Click tombol <span css={styles.btnPlaceholderText()}>
+                Add
+              </span>{" "}
+              untuk menambahkan Todo baru
+            </div>
+            <Container justifyContent="center">
+              <span css={styles.linkAboutPage()}>
+                <Item>
+                  {" "}
+                  <Link to="/about">Tentang kami </Link>
+                </Item>
+              </span>
+            </Container>
+          </React.Fragment>
         )}
       </Container>
     </section>

@@ -16,7 +16,7 @@ const Paper = ({ children }) => {
     <Container>
       <Item flex-direction="column" justify-content="space-between">
         <div className="paper-container" css={styles.Container()}>
-          <div css={styles.Frame(theme)}>{children};</div>
+          <div css={styles.Frame(theme)}>{children}</div>
         </div>
       </Item>
     </Container>

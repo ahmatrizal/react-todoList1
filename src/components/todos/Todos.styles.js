@@ -9,13 +9,18 @@ import { css } from "@emotion/react";
 
 export const todoPlaceholderText = () =>
   css`
-    font-family: "Homemade Apple", san-serif;
+    font-family: "Homemade Apple", sans-serif;
     font-size: 24px;
     text-align: center;
     padding: 16px;
   `;
 export const btnPlaceholderText = () =>
   css`
-    font-family: "Bungee", san-serif;
+    font-family: "Bungee", sans-serif;
     cursor: pointer;
   `;
+
+export const linkAboutPage = () => css`
+  font-family: "Bungee", sans-serif;
+  font-size: 18px;
+`;
