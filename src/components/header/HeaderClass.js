@@ -7,7 +7,7 @@ import { withTheme } from "@emotion/react";
 // import styles from "./Header.module.css";
 // import * as styles from "./Header.styles";
 import Container from "../../layout/Container";
-import Item from "../../layout/Item";
+import Item from "../../layout/ItemClass";
 import Styled from "@emotion/styled";
 
 const StyledH1 = Styled.h1`
